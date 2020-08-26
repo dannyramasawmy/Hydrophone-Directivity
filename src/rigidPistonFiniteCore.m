@@ -81,15 +81,18 @@ function [response] = rigidPistonFiniteCore(frequency_range, angle_range,...
     % =====================================================================
     % initalise
     response = zeros(length(frequency_range), length(angle_range));
-
-    for angle_idx = 1:length(angle_vector)
+    
+    % warning as this calculation can be slow
+    warning('The finite core directivity model can take a few minutes to run.')
+    
+    for angle_idx = 1:length(angle_range)
         for frequency_idx = 1:length(frequency_range)
             
             % get frequency
             omega = 2*pi * frequency_range(frequency_idx);
             
             % incident wave angle
-            vartheta = angle_vector(angle_idx) * pi/180;
+            vartheta = angle_range(angle_idx) * pi/180;
             
             % wavenumber
             k = omega / sound_speed;
