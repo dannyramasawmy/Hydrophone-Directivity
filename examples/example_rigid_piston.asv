@@ -1,0 +1,45 @@
+
+
+% frequencies
+frequency_range = linspace(0.1e6, 30e6, 100); % 0 to 30 MHz
+% angles
+angle_range =  [0, 20, 40, 60, 80];
+% outer fiber radius
+fibre_radius = 62.5e-6; %  62.5 microns
+% core radius
+core_radius = 25e-6; % 25 thicker code, 2.5 small core almost pointlike
+% sound speed
+sound_speed = 1480;   
+
+
+[response_point_fr] = rigidPistonPointCore(frequency_range, angle_range,...
+        fibre_radius, sound_speed, true);
+[response_finite_fr] = rigidPistonFiniteCore(frequency_range, angle_range,...
+        fibre_radius, core_radius, sound_speed, true);
+
+    
+
+% plot figure
+h1 = figure(1);
+subplot(1,2,1)
+hold on
+plot(frequency_range/1e6, abs(response_point_fr), 'k')
+hold off
+%labels
+xlabel("Frequency {MHz}")
+ylabel("Magnitude")
+legend("H_0")
+ylim([0 3])
+
+subplot(1,2,2)
+hold on
+plot(frequency_range/1e6, angle(response_point_fr), 'k')
+hold off
+%labels
+xlabel("Frequency {MHz}")
+ylabel("Phase")
+legend("H_0")
+ylim([-1 1])
+
+% set
+set(h1, "Position", [238.6000 342 809.4000 420])
