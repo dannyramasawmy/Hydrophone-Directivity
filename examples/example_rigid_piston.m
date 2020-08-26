@@ -1,4 +1,8 @@
 
+
+clear all
+close all
+
 % =========================================================================
 %   DEFINE SIMULATION AND FIBRE PARAMETERS
 % =========================================================================
@@ -71,14 +75,14 @@ normal_flag = false;
 [directivity_point] = rigidPistonPointCore(frequency_range, ...
     angle_range, fibre_radius, sound_speed, normal_flag);
 
-colors = 'rymbkg';
 % plotting
+plot_colors = 'rymbkg';
 for angle_idx = 1:length(angle_range)
     h2 = figure(2);
-    
+
     subplot(1,2,1)
     hold on
-    plot(frequency_vector/1e6, abs(directivity_point(:, angle_idx)),clvc(ang_dx), ...
+    plot(frequency_range/1e6, abs(directivity_point(:, angle_idx)),plot_colors(angle_idx), ...
         'DisplayName',[num2str(angle_range(angle_idx)),'^\circ'])
     %labels
     xlabel('Frequency [MHz]')
@@ -89,8 +93,8 @@ for angle_idx = 1:length(angle_range)
     
     subplot(1,2,2)
     hold on
-    plot(frequency_vector/1e6, angle(directivity_point(:, angle_idx)),clvc(ang_dx), ...
-        'DisplayName',[num2str(ang),'^\circ'])
+    plot(frequency_range/1e6, angle(directivity_point(:, angle_idx)),plot_colors(angle_idx), ...
+        'DisplayName',[num2str(angle_range(angle_idx)),'^\circ'])
     %labels
     xlabel('Frequency [MHz]')
     ylabel('Phase')
@@ -102,8 +106,7 @@ end
 
 % set
 set(h2, "Position", [238.6000 342 809.4000 420])
-sgtitle('Fibre Directivity Point-like Core')
-
+sgtitle('Fibre Directivity Point-Like Core')
 
 % =========================================================================
 %   DIRECTIONAL RESPONSE FINITE CORE (KRUCKER: FIGURE 7)
@@ -115,3 +118,39 @@ sgtitle('Fibre Directivity Point-like Core')
 [directivity_finite] = rigidPistonFiniteCore(frequency_range, ...
     angle_range, fibre_radius, core_radius, sound_speed, normal_flag);
 
+% plotting
+plot_colors = 'rymbkg';
+for angle_idx = 1:length(angle_range)
+    h3 = figure(3);
+
+    subplot(1,2,1)
+    hold on
+    plot(frequency_range/1e6, ...
+        abs(directivity_finite(:, angle_idx)), ...
+        plot_colors(angle_idx), ...
+        'DisplayName',[num2str(angle_range(angle_idx)),'^\circ'])
+    %labels
+    xlabel('Frequency [MHz]')
+    ylabel('Magnitude')
+    hold off
+    ylim([0 3])
+    legend
+    
+    subplot(1,2,2)
+    hold on
+    plot(frequency_range/1e6, ...
+        angle(directivity_finite(:, angle_idx)), ...
+        plot_colors(angle_idx), ...
+        'DisplayName',[num2str(angle_range(angle_idx)),'^\circ'])
+    %labels
+    xlabel('Frequency [MHz]')
+    ylabel('Phase')
+    ylim([-1 1])
+    legend
+    hold off
+    drawnow;
+end
+
+% set
+set(h3, "Position", [238.6000 342 809.4000 420])
+sgtitle('Fibre Directivity Finite Core')
