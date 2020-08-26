@@ -20,7 +20,7 @@ A quick list of the main functions, see the examples for more details:
 rigidBaffle(...)
 % soft baffle model 
 softBaffle(...)
-% unbaffled
+% unbaffled model
 unbaffled(...)
 % rigid piston with a point core
 rigidPistonPointCore(...)
