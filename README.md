@@ -1,5 +1,5 @@
 # Hydrophone-Directivity
-This small toolbox contains simple functions for modelling hydrophone directivity and estimating the effective element area. These are the rigid-baffle (RB), unbaffled (UB), soft-baffled (SB) and rigid-piston (RP) models [1,2]. Please read references [1] and [2] for more detailed information about their use cases and limitations.
+This small toolbox contains simple functions for modelling hydrophone directivity and could be used to estimate the effective element area. These are the rigid-baffle (RB), unbaffled (UB), soft-baffled (SB) and rigid-piston (RP) models [1,2]. Please read references [1] and [2] for more detailed information about their use cases and limitations.
 
 ## Contact
 - **Author** - Danny Ramasawmy
