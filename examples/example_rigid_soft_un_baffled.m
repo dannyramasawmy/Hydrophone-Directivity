@@ -2,7 +2,7 @@
 %
 % DESCRIPTION:
 %     This example uses the functions for the rigid-/soft-/un- baffled
-%     models. These are standard models for hydrophone directicity, see [1]
+%     models. These are standard models for hydrophone directivity, see [1]
 %     for more details and examples.
 %
 %     [1] Wear, Keith A., and Samuel M. Howard. "Directivity and

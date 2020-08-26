@@ -49,7 +49,7 @@ function [response] = rigidPistonFiniteCore(frequency_range, angle_range,...
         b = @(r, theta) (sqrt((r.^2 .* cos(theta).^2) ...
             +(fibre_radius.^2 - r.^2)) - (r.*cos(theta)));
       
-        % intialise
+        % initialize
         response = zeros(length(frequency_range), 1);
         
         for frequency_idx = 1:length(frequency_range)
@@ -79,7 +79,7 @@ function [response] = rigidPistonFiniteCore(frequency_range, angle_range,...
     % =====================================================================
     %   DIRECTIONAL RESPONSE
     % =====================================================================
-    % initalise
+    % initialize
     response = zeros(length(frequency_range), length(angle_range));
     
     % warning as this calculation can be slow

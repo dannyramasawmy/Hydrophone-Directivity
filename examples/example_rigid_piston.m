@@ -6,7 +6,7 @@
 %     functions are an implementation of [2] and reproduce some of the
 %     figures for validation.
 %
-%     [2] Krücker, Jochen F., et al. "Rigid piston approximation for
+%     [2] Krï¿½cker, Jochen F., et al. "Rigid piston approximation for
 %     computing the transfer function and angular response of a fiber-optic
 %     hydrophone." The Journal of the Acoustical Society of America (2000).
 %
@@ -30,7 +30,7 @@ angle_range =  [0, 20, 40, 60, 80];
 % fibre radius
 fibre_radius = 62.5e-6; %  62.5 microns
 % core radius
-core_radius = 25e-6; % 25 thicker core, 2.5 small core almost pointlike
+core_radius = 25e-6; % 25 thicker core, 2.5 small core almost point-like
 % sound speed of fluid medium
 sound_speed = 1480;
 

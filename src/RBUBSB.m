@@ -4,7 +4,7 @@ function [directivity] = RBUBSB(frequency_range, angle_range, element_radius, ..
     %
     % DESCRIPTION:
     %     RBUBSB calculates the directional response of hydrophones
-    %     using the piston in a rigid-/soft-/un- baffled model.
+    %     using the piston in a rigid-/soft-/un- baffled model. 
     %
     %     See reference [1] for more detail.
     %
@@ -29,18 +29,17 @@ function [directivity] = RBUBSB(frequency_range, angle_range, element_radius, ..
     %     directivity   - 2D matrix of the complex directivity
     %
     % DEPENDENCIES:
-    %	  No dependecies.
+    %	  No dependencies.
     %
     % ABOUT:
     %     author      - Danny Ramasawmy
     %     date        - 26th August 2020
     %     last update - 26th August 2020
     
-    
     % range of angles in radians
     theta_range = angle_range * pi /180;
     
-    % intitalise directivity
+    % initialize directivity
     directivity = zeros(length(frequency_range), length(theta_range));
     
     % loop and calculate

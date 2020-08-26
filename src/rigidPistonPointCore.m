@@ -42,7 +42,7 @@ function [response] = rigidPistonPointCore(frequency_range, angle_range,...
     % =====================================================================
     if normal_flag == true
         
-        % initialise
+        % initialize
         response = zeros(length(frequency_range), 1);
         
         for frequency_idx = 1:length(frequency_range)
@@ -61,7 +61,7 @@ function [response] = rigidPistonPointCore(frequency_range, angle_range,...
     % =====================================================================
     %   DIRECTIONAL RESPONSE
     % =====================================================================
-    % initalise
+    % initialize
     response = zeros(length(frequency_range), length(angle_range));
     
     for angle_idx = 1:length(angle_range)
@@ -76,7 +76,7 @@ function [response] = rigidPistonPointCore(frequency_range, angle_range,...
             % wavenumber
             k = omega / sound_speed;
             
-            % top and bottom of intergrand
+            % top and bottom of integrand
             bottom  = @(phi) (1 + cos(phi) .* sin(vartheta));
             top     = @(phi) (1 - exp(-1i .* k .* fibre_radius .* (bottom(phi))));
             % integrand
