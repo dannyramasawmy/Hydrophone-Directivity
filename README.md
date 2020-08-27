@@ -6,7 +6,7 @@ This small toolbox contains simple functions for modelling hydrophone directivit
 - **Email**  - rmapdrr@ucl.ac.uk
 
 ## Installation
-- Requires MATLAB 2019a+ (Not tested on previous versions but should work correctly.)
+- Requires MATLAB 2016a+ (Not tested on previous versions but should work correctly.)
 - Add a path to the folder to the working directory:
 ```
 addpath(genpath(<path to the toolbox>))

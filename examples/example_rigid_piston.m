@@ -1,4 +1,4 @@
-%example_rigid_piston 
+%example_rigid_piston
 %
 % DESCRIPTION:
 %     This example uses the rigid piston functions for modelling the
@@ -6,9 +6,9 @@
 %     functions are an implementation of [2] and reproduce some of the
 %     figures for validation.
 %
-%     [2] Kr�cker, Jochen F., et al. "Rigid piston approximation for
+%     [2] Kr�cker, Jochen F., et al. 'Rigid piston approximation for
 %     computing the transfer function and angular response of a fiber-optic
-%     hydrophone." The Journal of the Acoustical Society of America (2000).
+%     hydrophone.' The Journal of the Acoustical Society of America (2000).
 %
 % ABOUT:
 %     author      - Danny Ramasawmy
@@ -61,9 +61,9 @@ plot(frequency_range/1e6, abs(frequency_response_point), 'k')
 plot(frequency_range/1e6, abs(frequency_response_finite), 'k--')
 hold off
 %labels
-xlabel("Frequency {MHz}")
-ylabel("Magnitude")
-legend("Point core","Finite core")
+xlabel('Frequency {MHz}')
+ylabel('Magnitude')
+legend('Point core','Finite core')
 ylim([0 3])
 
 subplot(1,2,2)
@@ -72,15 +72,18 @@ plot(frequency_range/1e6, angle(frequency_response_point), 'k')
 plot(frequency_range/1e6, angle(frequency_response_finite), 'k--')
 hold off
 %labels
-xlabel("Frequency {MHz}")
-ylabel("Phase")
-legend("Point core","Finite core")
+xlabel('Frequency {MHz}')
+ylabel('Phase')
+legend('Point core','Finite core')
 ylim([-1 1])
 
 % set
-set(h1, "Position", [238.6000 342 809.4000 420])
-sgtitle('Frequency Response')
-
+set(h1, 'Position', [238.6000 342 809.4000 420])
+try
+    % not available in all versions of matlab
+    sgtitle('Frequency Response')
+catch
+end
 % =========================================================================
 %   DIRECTIONAL RESPONSE POINT CORE (KRUCKER: FIGURE 6)
 % =========================================================================
@@ -125,9 +128,12 @@ for angle_idx = 1:length(angle_range)
 end
 
 % set
-set(h2, "Position", [238.6000 342 809.4000 420])
-sgtitle('Fibre Directivity Point-Like Core')
-
+set(h2, 'Position', [238.6000 342 809.4000 420])
+try
+    % not available in all versions of matlab
+    sgtitle('Fibre Directivity Point-Like Core')
+catch
+end
 % =========================================================================
 %   DIRECTIONAL RESPONSE FINITE CORE (KRUCKER: FIGURE 7)
 % =========================================================================
@@ -154,7 +160,7 @@ for angle_idx = 1:length(angle_range)
     ylabel('Magnitude')
     hold off
     ylim([0 3])
-    legend
+    legend;
     
     subplot(1,2,2)
     hold on
@@ -166,11 +172,15 @@ for angle_idx = 1:length(angle_range)
     xlabel('Frequency [MHz]')
     ylabel('Phase')
     ylim([-1 1])
-    legend
+    legend;
     hold off
     drawnow;
 end
 
 % set
-set(h3, "Position", [238.6000 342 809.4000 420])
-sgtitle('Fibre Directivity Finite Core')
+set(h3, 'Position', [238.6000 342 809.4000 420])
+try
+    % not available in all versions of MATLAB
+    sgtitle('Fibre Directivity Finite Core')
+catch
+end
