@@ -8,7 +8,7 @@ function [directivity] = rigidBaffle(frequency_range, angle_range, element_radiu
     %     See reference [1] for more detail.
     %
     % USAGE:
-    %     radius = rigidBaffle(frequency_range, angle_range, element_area, sound_speed)
+    %     directivity = rigidBaffle(frequency_range, angle_range, element_area, sound_speed)
     %
     % INPUTS:
     %     frequency_range - 1D vector of frequencies [Hz]

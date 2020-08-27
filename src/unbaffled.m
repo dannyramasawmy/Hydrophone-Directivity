@@ -8,7 +8,7 @@ function [directivity] = unbaffled(frequency_range, angle_range, element_radius,
     %     See reference [1] for more detail.
     %
     % USAGE:
-    %     radius = unbaffled(frequency_range, angle_range, element_area, sound_speed)
+    %     directivity = unbaffled(frequency_range, angle_range, element_area, sound_speed)
     %
     % INPUTS:
     %     frequency_range - 1D vector of frequencies [Hz]

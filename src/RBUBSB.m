@@ -9,7 +9,7 @@ function [directivity] = RBUBSB(frequency_range, angle_range, element_radius, ..
     %     See reference [1] for more detail.
     %
     % USAGE:
-    %     radius = RBUBSB(frequency_range, angle_range, element_area,... 
+    %     directivity = RBUBSB(frequency_range, angle_range, element_area,... 
     %           sound_speed, model_flag)
     %
     % INPUTS:
